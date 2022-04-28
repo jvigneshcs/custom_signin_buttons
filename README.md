@@ -96,6 +96,6 @@ enum Button {
 }
 ```
 
-<img src="https://github.com/ZaynJarvis/Flutter-Sign-in-Button/raw/master/showcase.png" width="300">
+<img src="https://github.com/DarkHachi/custom_signin_buttons/blob/master/showcase.png" width="300">
 
 **Refer to example folder and the source code for more information.**
