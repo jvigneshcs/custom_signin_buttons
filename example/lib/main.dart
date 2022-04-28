@@ -27,7 +27,10 @@ class ButtonPage extends StatelessWidget {
             children: [
               SignInButton(button: Button.AppleDark),
               SizedBox(height: 10),
-              SignInButton(button: Button.Discord),
+              SignInButton(
+                button: Button.Discord,
+                text: 'Inicia con Discord',
+              ),
               SizedBox(height: 10),
               SignInButton(button: Button.Email),
               SizedBox(height: 10),
@@ -44,6 +47,21 @@ class ButtonPage extends StatelessWidget {
               SignInButton(button: Button.Pinterest),
               SizedBox(height: 10),
               SignInButton(button: Button.PlayStation),
+              SizedBox(height: 10),
+              CustomSignInButton(
+                text: 'Sign In With Email',
+                customIcon: Icons.email,
+                buttonColor: Colors.blue,
+                iconColor: Colors.grey,
+                textColor: Colors.grey,
+                mini: false,
+              ),
+              CustomSignInButton(
+                customIcon: FontAwesomeIcons.envelopeOpen,
+                buttonColor: Colors.blue,
+                iconColor: Colors.grey,
+                mini: true,
+              ),
               SizedBox(height: 10),
               Row(
                 children: [

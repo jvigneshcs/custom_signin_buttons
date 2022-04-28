@@ -26,15 +26,13 @@ import 'package:custom_signin_buttons/custom_signin_buttons.dart';
 ```dart
 SignInButton(
   Buttons.Google,
-  onPressed: () {},
 )
 
 // with custom text
 SignInButton(
-  Buttons.Google,
-  text: "Sign up with Google",
-  onPressed: () {},
-)
+  button: Button.Discord,
+  text: 'Inicia con Discord',
+),
 ```
 
 ### For mini buttons.
@@ -43,20 +41,30 @@ SignInButton(
 SignInButton(
   Buttons.Facebook,
   mini: true,
-  onPressed: () {},
 )
 ```
 
 ### For self-build buttons.
 
 ```dart
-SignInButtonBuilder(
-  text: 'Sign in with Email',
-  icon: Icons.email,
-  onPressed: () {},
-  backgroundColor: Colors.blueGrey[700]!,
+CustomSignInButton(
+  text: 'Sign In With Email',
+  customIcon: Icons.email,
+  buttonColor: Colors.blue,
+  iconColor: Colors.grey,
+  textColor: Colors.grey,
+  mini: false,
 )
+
+CustomSignInButton(
+  customIcon: FontAwesomeIcons.envelopeOpen,
+  buttonColor: Colors.blue,
+  iconColor: Colors.grey,
+  mini: true,
+),
 ```
+
+``` onPressed(){} ``` isn't required
 
 ### Built-in Buttons contain
 
