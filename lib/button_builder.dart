@@ -107,7 +107,8 @@ class CustomSignInButton extends StatelessWidget {
                     alignment: Alignment.topLeft,
                     child: useGoogleImage
                         ? Image(
-                            image: AssetImage('assets/google.png'),
+                            image: AssetImage('assets/google.png',
+                                package: 'custom_signin_buttons'),
                             height: small ? 34 : imageSize,
                           )
                         : setAssetImage.assetName.isNotEmpty

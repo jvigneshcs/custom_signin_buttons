@@ -1,6 +1,7 @@
 name: custom_signin_buttons
 description: A package designed to create sign in buttons in an easier and more customizable way.
-version: 1.0.0
+version: 1.0.1
+repository: https://github.com/DarkHachi/custom_signin_buttons
 
 environment:
   sdk: ">=2.16.2 <3.0.0"
@@ -17,5 +18,8 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
+  uses-material-design: true
   assets:
-    - assets/
+    - assets/google.png
+    - assets/playstore.png
+    - assets/tiktok.png
