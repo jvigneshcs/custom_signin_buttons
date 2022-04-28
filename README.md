@@ -43,6 +43,14 @@ SignInButton(
   mini: true,
 )
 ```
+### For small buttons.
+
+```dart
+SignInButton(
+  Buttons.Facebook,
+  small: true,
+)
+```
 
 ### For self-build buttons.
 
@@ -103,6 +111,8 @@ enum Button {
   YoutubeDark,
 }
 ```
+
+### Built-in Buttons options
 
 <img src="https://github.com/DarkHachi/custom_signin_buttons/raw/master/showcase.PNG" width="300">
 

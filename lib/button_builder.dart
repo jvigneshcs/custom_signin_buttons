@@ -16,6 +16,7 @@ class CustomSignInButton extends StatelessWidget {
   final double iconTopPadding;
   final double imageSize;
   final bool mini;
+  final bool small;
   final Function()? onPressed;
   final AssetImage setAssetImage;
   final Color splashColor;
@@ -24,6 +25,7 @@ class CustomSignInButton extends StatelessWidget {
   final double textSize;
   final bool useGoogleImage;
   final bool useGradient;
+  final bool useText;
   final Gradient setGradient;
   final double width;
 
@@ -43,6 +45,7 @@ class CustomSignInButton extends StatelessWidget {
     this.imageSize = 25,
     Key? key,
     this.mini = false,
+    this.small = false,
     this.onPressed,
     this.setAssetImage = const AssetImage(''),
     this.splashColor = Colors.white,
@@ -51,6 +54,7 @@ class CustomSignInButton extends StatelessWidget {
     this.textSize = 15,
     this.useGoogleImage = false,
     this.useGradient = false,
+    this.useText = true,
     this.setGradient = const LinearGradient(colors: [Colors.grey, Colors.grey]),
     this.width = double.infinity,
   }) : super(key: key);
@@ -60,8 +64,16 @@ class CustomSignInButton extends StatelessWidget {
     return Flexible(
       fit: FlexFit.loose,
       child: Container(
-        height: mini ? 40 : height,
-        width: mini ? 40 : width,
+        height: mini
+            ? 40
+            : small
+                ? 55
+                : height,
+        width: mini
+            ? 40
+            : small
+                ? 55
+                : width,
         decoration: !useGradient
             ? BoxDecoration(
                 color: buttonColor,
@@ -72,8 +84,11 @@ class CustomSignInButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(borderRadius)),
         child: MaterialButton(
           minWidth: 40,
-          padding: EdgeInsets.only(left: iconLeftPadding, top: iconTopPadding),
-          
+          padding: EdgeInsets.only(
+            left: small ? -2 : iconLeftPadding,
+            top: small ? 4 : iconTopPadding,
+            bottom: small ? 4 : 0,
+          ),
           splashColor: splashColor,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(borderRadius)),
@@ -93,24 +108,24 @@ class CustomSignInButton extends StatelessWidget {
                     child: useGoogleImage
                         ? Image(
                             image: AssetImage('assets/google.png'),
-                            height: imageSize,
+                            height: small ? 34 : imageSize,
                           )
                         : setAssetImage.assetName.isNotEmpty
                             ? Image(
                                 image: setAssetImage,
-                                height: imageSize,
+                                height: small ? 34 : imageSize,
                               )
                             : Icon(
                                 customIcon,
                                 color: iconColor,
-                                size: iconSize,
+                                size: small ? 32 : iconSize,
                               ),
                   )),
-              mini
+              (mini || small)
                   ? SizedBox()
                   : Flexible(
                       child: Center(
-                        child: Text(text,
+                        child: Text(useText ? text : '',
                             style: TextStyle(
                               fontSize: textSize,
                               fontWeight: FontWeight.w600,

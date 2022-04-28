@@ -11,6 +11,8 @@ class SignInButton extends StatelessWidget {
   final Color iconColor;
   final double iconSize;
   final bool mini;
+  final bool small;
+  final bool useText;
   final Function()? onPressed;
   final Color splashColor;
   final String? text;
@@ -20,17 +22,19 @@ class SignInButton extends StatelessWidget {
   final bool spanish;
 
   SignInButton({
-    this.button = Button.Xbox,
+    Key? key,
+    this.button = Button.YoutubeDark,
     this.borderRadius = 5,
     this.buttonColor = Colors.black12,
     this.height = 40,
     this.iconColor = Colors.black87,
     this.iconSize = 24,
-    Key? key,
     this.mini = false,
+    this.small = false,
+    this.useText = true,
     this.onPressed,
     this.splashColor = Colors.white30,
-    this.text='',
+    this.text = '',
     this.textColor = Colors.black,
     this.textSize = 15,
     this.width = double.infinity,
@@ -41,14 +45,15 @@ class SignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     var texto = '';
     spanish ? texto = 'Iniciar Sesion con' : texto = 'Sign in with';
-    text!.isNotEmpty ? texto = text! : texto = 'Sign in with';
     switch (button) {
       case Button.Apple:
       case Button.AppleDark:
         return CustomSignInButton(
             key: ValueKey('Apple'),
             mini: mini,
-            text: '$texto Apple',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto Apple',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -68,7 +73,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('Discord'),
             mini: mini,
-            text: '$texto Discord',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto Discord',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -87,7 +94,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('Email'),
             mini: mini,
-            text: '$texto Email',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto Email',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -103,7 +112,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('Facebook'),
             mini: mini,
-            text: '$texto Facebook',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto Facebook',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -123,7 +134,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('GitHub'),
             mini: mini,
-            text: '$texto GitHub',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto GitHub',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -140,7 +153,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('Google'),
             mini: mini,
-            text: '$texto Google',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto Google',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -165,7 +180,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('GooglePlay'),
             mini: mini,
-            text: '$texto PlayStore',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto PlayStore',
+            useText: useText,
             height: height,
             width: width,
             setAssetImage: AssetImage('assets/playstore.png'),
@@ -180,7 +197,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('Instagram'),
             mini: mini,
-            text: '$texto Instagram',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto Instagram',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -211,7 +230,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('LinkedIn'),
             mini: mini,
-            text: '$texto LinkedIn',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto LinkedIn',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -226,7 +247,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('Pinterest'),
             mini: mini,
-            text: '$texto Pinterest',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto Pinterest',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -242,7 +265,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('PlayStation'),
             mini: mini,
-            text: '$texto PSN',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto PSN',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -271,7 +296,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('Reddit'),
             mini: mini,
-            text: '$texto Reddit',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto Reddit',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -300,7 +327,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('Spotify'),
             mini: mini,
-            text: '$texto Spotify',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto Spotify',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -321,7 +350,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('Steam'),
             mini: mini,
-            text: '$texto Steam',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto Steam',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -347,7 +378,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('TikTok'),
             mini: mini,
-            text: '$texto TikTok',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto TikTok',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -365,7 +398,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('Twitch'),
             mini: mini,
-            text: '$texto Twitch',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto Twitch',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -384,7 +419,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('Twitter'),
             mini: mini,
-            text: '$texto Twitter',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto Twitter',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -400,7 +437,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('Xbox'),
             mini: mini,
-            text: '$texto Xbox',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto Xbox',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -419,7 +458,9 @@ class SignInButton extends StatelessWidget {
         return CustomSignInButton(
             key: ValueKey('Youtube'),
             mini: mini,
-            text: '$texto Youtube',
+            small: small,
+            text: text!.isNotEmpty ? text! : '$texto Youtube',
+            useText: useText,
             height: height,
             width: width,
             splashColor: splashColor,
