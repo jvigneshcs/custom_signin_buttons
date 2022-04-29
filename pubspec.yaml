@@ -1,6 +1,6 @@
 name: custom_signin_buttons
 description: A package designed to create sign in buttons in an easier and more customizable way.
-version: 1.0.1
+version: 1.0.2
 repository: https://github.com/DarkHachi/custom_signin_buttons
 
 environment:

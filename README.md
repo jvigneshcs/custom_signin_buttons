@@ -1,4 +1,5 @@
-# A package designed to create sign in buttons in an easier and more customizable way.
+# Custom Sign-In Buttons :3
+## A package designed to create sign in buttons in an easier and more customizable way.
 
 > ## Inspired in [flutter_signin_buttons](https://pub.dev/packages/flutter_signin_button)
 
@@ -112,8 +113,5 @@ enum Button {
 }
 ```
 
-### Built-in Buttons options
 
 <img src="https://github.com/DarkHachi/custom_signin_buttons/raw/master/showcase.PNG" width="300">
-
-**Refer to example folder and the source code for more information.**

@@ -6,17 +6,14 @@ import 'package:custom_signin_buttons/custom_signin_buttons.dart';
 class SignInButton extends StatelessWidget {
   final Button button;
   final double borderRadius;
-  final Color buttonColor;
   final double height;
-  final Color iconColor;
   final double iconSize;
   final bool mini;
   final bool small;
-  final bool useText;
+  final bool showText;
   final Function()? onPressed;
   final Color splashColor;
   final String? text;
-  final Color textColor;
   final double textSize;
   final double width;
   final bool spanish;
@@ -25,17 +22,14 @@ class SignInButton extends StatelessWidget {
     Key? key,
     this.button = Button.YoutubeDark,
     this.borderRadius = 5,
-    this.buttonColor = Colors.black12,
     this.height = 40,
-    this.iconColor = Colors.black87,
     this.iconSize = 24,
     this.mini = false,
     this.small = false,
-    this.useText = true,
+    this.showText = true,
     this.onPressed,
     this.splashColor = Colors.white30,
     this.text = '',
-    this.textColor = Colors.black,
     this.textSize = 15,
     this.width = double.infinity,
     this.spanish = false,
@@ -53,7 +47,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto Apple',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -67,6 +61,7 @@ class SignInButton extends StatelessWidget {
                 button == Button.Apple ? Color(0xFF050505) : Color(0xFFF3F2F1),
             iconLeftPadding: mini ? 0 : 5,
             imagePadding: EdgeInsets.symmetric(vertical: 3),
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.Discord:
@@ -75,7 +70,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto Discord',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -96,15 +91,16 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto Email',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
             borderRadius: borderRadius,
-            buttonColor: buttonColor,
-            textColor: textColor,
+            buttonColor: Colors.black12,
+            textColor: Colors.black,
             customIcon: FontAwesomeIcons.envelope,
-            iconColor: iconColor,
+            iconColor: Colors.black87,
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.Facebook:
@@ -114,7 +110,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto Facebook',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -128,6 +124,7 @@ class SignInButton extends StatelessWidget {
                 : FontAwesomeIcons.facebookF,
             // iconSize: button == Button.FacebookNew ? 28 : 25,
             iconColor: Colors.white,
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.GitHub:
@@ -136,7 +133,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto GitHub',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -145,6 +142,7 @@ class SignInButton extends StatelessWidget {
             textColor: Colors.white,
             customIcon: FontAwesomeIcons.github,
             iconColor: Colors.white,
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.Google:
@@ -155,7 +153,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto Google',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -174,6 +172,7 @@ class SignInButton extends StatelessWidget {
                     ? Colors.white
                     : Colors.transparent,
             useGoogleImage: true,
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.GooglePlay:
@@ -182,7 +181,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto PlayStore',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             setAssetImage: AssetImage(
@@ -193,6 +192,7 @@ class SignInButton extends StatelessWidget {
             borderRadius: borderRadius,
             buttonColor: Color(0xFFF6F6F6),
             textColor: Colors.black87,
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.Instagram:
@@ -202,7 +202,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto Instagram',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -227,6 +227,7 @@ class SignInButton extends StatelessWidget {
                   1
                 ]),
             iconColor: Colors.white,
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.LinkedIn:
@@ -235,7 +236,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto LinkedIn',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -244,6 +245,7 @@ class SignInButton extends StatelessWidget {
             textColor: Colors.white,
             customIcon: FontAwesomeIcons.linkedinIn,
             iconColor: Colors.white,
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.Pinterest:
@@ -252,7 +254,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto Pinterest',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -261,6 +263,7 @@ class SignInButton extends StatelessWidget {
             textColor: Colors.white,
             customIcon: FontAwesomeIcons.pinterest,
             iconColor: Colors.white,
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.PlayStation:
@@ -270,7 +273,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto PSN',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -292,6 +295,7 @@ class SignInButton extends StatelessWidget {
             customIcon: FontAwesomeIcons.playstation,
             imagePadding: EdgeInsets.symmetric(vertical: 3),
             iconColor: Colors.white,
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.Reddit:
@@ -301,7 +305,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto Reddit',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -323,6 +327,7 @@ class SignInButton extends StatelessWidget {
             customIcon: FontAwesomeIcons.reddit,
             imagePadding: EdgeInsets.symmetric(vertical: 3),
             iconColor: Colors.white,
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.Spotify:
@@ -332,7 +337,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto Spotify',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -342,7 +347,7 @@ class SignInButton extends StatelessWidget {
                 : Color(0xFF222222),
             textColor: Colors.white,
             customIcon: FontAwesomeIcons.spotify,
-            iconSize: 24,
+            iconSize: iconSize,
             iconColor: button == Button.SpotifyLight
                 ? Colors.white
                 : Color(0xFF1DB954),
@@ -355,7 +360,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto Steam',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -375,6 +380,7 @@ class SignInButton extends StatelessWidget {
             textColor: Colors.white,
             customIcon: FontAwesomeIcons.steamSymbol,
             iconColor: Colors.white,
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.TikTok:
@@ -383,7 +389,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto TikTok',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -395,6 +401,7 @@ class SignInButton extends StatelessWidget {
             textColor: Colors.white,
             customIcon: FontAwesomeIcons.twitter,
             iconColor: Colors.white,
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.Twitch:
@@ -404,7 +411,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto Twitch',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -417,6 +424,7 @@ class SignInButton extends StatelessWidget {
             customIcon: FontAwesomeIcons.twitch,
             iconColor:
                 button == Button.TwitchLight ? Colors.white : Color(0xFF9146FF),
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.Twitter:
@@ -425,7 +433,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto Twitter',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -434,6 +442,7 @@ class SignInButton extends StatelessWidget {
             textColor: Colors.white,
             customIcon: FontAwesomeIcons.twitter,
             iconColor: Colors.white,
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.Xbox:
@@ -443,7 +452,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto Xbox',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -455,6 +464,7 @@ class SignInButton extends StatelessWidget {
             customIcon: FontAwesomeIcons.xbox,
             iconColor:
                 button == Button.Xbox ? Color(0xFF107C10) : Color(0xFFF3F2F1),
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
       case Button.Youtube:
@@ -464,7 +474,7 @@ class SignInButton extends StatelessWidget {
             mini: mini,
             small: small,
             text: text!.isNotEmpty ? text! : '$texto Youtube',
-            useText: useText,
+            showText: showText,
             height: height,
             width: width,
             splashColor: splashColor,
@@ -477,6 +487,7 @@ class SignInButton extends StatelessWidget {
                 ? Color(0xFFFF0000)
                 : Color(0xFFFBFBFB),
             customIcon: FontAwesomeIcons.youtube,
+            iconSize: iconSize,
             textSize: textSize,
             onPressed: onPressed);
     }

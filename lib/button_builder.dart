@@ -25,7 +25,7 @@ class CustomSignInButton extends StatelessWidget {
   final double textSize;
   final bool useGoogleImage;
   final bool useGradient;
-  final bool useText;
+  final bool showText;
   final Gradient setGradient;
   final double width;
 
@@ -54,7 +54,7 @@ class CustomSignInButton extends StatelessWidget {
     this.textSize = 15,
     this.useGoogleImage = false,
     this.useGradient = false,
-    this.useText = true,
+    this.showText = true,
     this.setGradient = const LinearGradient(colors: [Colors.grey, Colors.grey]),
     this.width = double.infinity,
   }) : super(key: key);
@@ -126,7 +126,7 @@ class CustomSignInButton extends StatelessWidget {
                   ? SizedBox()
                   : Flexible(
                       child: Center(
-                        child: Text(useText ? text : '',
+                        child: Text(showText ? text : '',
                             style: TextStyle(
                               fontSize: textSize,
                               fontWeight: FontWeight.w600,
