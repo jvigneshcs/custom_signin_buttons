@@ -158,6 +158,12 @@ class SignInButton extends StatelessWidget {
             width: width,
             splashColor: splashColor,
             borderRadius: borderRadius,
+            borderWidth: button == Button.GoogleNeutral ? 0.0 : 1.0,
+            borderColor: button == Button.GoogleNeutral
+                ? Colors.transparent
+                : button == Button.GoogleDark
+                    ? Color(0xFF8E918F)
+                    : Color(0xFF747775),
             buttonColor: button == Button.GoogleNeutral
                 ? Color(0xFFF2F2F2)
                 : button == Button.GoogleDark
@@ -171,7 +177,8 @@ class SignInButton extends StatelessWidget {
             useGoogleImage: true,
             iconSize: iconSize,
             textSize: textSize,
-            onPressed: onPressed);
+            onPressed: onPressed,
+          );
       case Button.GooglePlay:
         return CustomSignInButton(
             key: ValueKey('GooglePlay'),

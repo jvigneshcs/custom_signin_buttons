@@ -28,6 +28,8 @@ class CustomSignInButton extends StatelessWidget {
   final bool showText;
   final Gradient setGradient;
   final double width;
+  final Color borderColor;
+  final double borderWidth;
 
   const CustomSignInButton({
     this.borderRadius = 5,
@@ -57,13 +59,14 @@ class CustomSignInButton extends StatelessWidget {
     this.showText = true,
     this.setGradient = const LinearGradient(colors: [Colors.grey, Colors.grey]),
     this.width = double.infinity,
+    this.borderColor = Colors.transparent,
+    this.borderWidth = 0.0,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      fit: FlexFit.loose,
-      child: Container(
+    final showBorder = borderWidth > 0;
+    return Container(
         height: mini
             ? 40
             : small
@@ -78,10 +81,17 @@ class CustomSignInButton extends StatelessWidget {
             ? BoxDecoration(
                 color: buttonColor,
                 borderRadius: BorderRadius.circular(borderRadius),
+                border: showBorder 
+                    ? Border.all(color: borderColor, width: borderWidth)
+                    : null,
               )
             : BoxDecoration(
                 gradient: setGradient,
-                borderRadius: BorderRadius.circular(borderRadius)),
+                borderRadius: BorderRadius.circular(borderRadius),
+                border: showBorder 
+                    ? Border.all(color: borderColor, width: borderWidth)
+                    : null,
+              ),
         child: MaterialButton(
           minWidth: 40,
           padding: EdgeInsets.only(
@@ -138,7 +148,6 @@ class CustomSignInButton extends StatelessWidget {
           ),
           onPressed: onPressed ?? () {},
         ),
-      ),
     );
   }
 }

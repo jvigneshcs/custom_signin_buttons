@@ -73,6 +73,47 @@ CustomSignInButton(
 ),
 ```
 
+### For buttons with borders.
+
+```dart
+// Button with a simple border
+CustomSignInButton(
+  text: 'Sign In With Border',
+  customIcon: Icons.email,
+  buttonColor: Colors.white,
+  textColor: Colors.blue,
+  iconColor: Colors.blue,
+  borderColor: Colors.blue,
+  borderWidth: 2.0,
+)
+
+// Button with thick red border
+CustomSignInButton(
+  text: 'Custom Border Style',
+  customIcon: Icons.lock,
+  buttonColor: Colors.grey.shade50,
+  textColor: Colors.red,
+  iconColor: Colors.red,
+  borderColor: Colors.red,
+  borderWidth: 3.0,
+  borderRadius: 10,
+)
+
+// Button with gradient and border
+CustomSignInButton(
+  text: 'Gradient + Border',
+  customIcon: Icons.star,
+  useGradient: true,
+  setGradient: LinearGradient(
+    colors: [Colors.purple, Colors.blue],
+  ),
+  textColor: Colors.white,
+  iconColor: Colors.white,
+  borderColor: Colors.white,
+  borderWidth: 2.0,
+)
+```
+
 ``` onPressed(){} ``` isn't required
 
 ### Built-in Buttons contain
@@ -87,7 +128,7 @@ enum Button {
   FacebookNew,
   GitHub,
   Google,
-  GoogleBlue,
+  GoogleNeutral,
   GoogleBlack,
   GooglePlay,
   Instagram,
