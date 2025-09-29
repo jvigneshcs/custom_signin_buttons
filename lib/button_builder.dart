@@ -139,8 +139,9 @@ class CustomSignInButton extends StatelessWidget {
                         child: Text(showText ? text : '',
                             style: TextStyle(
                               fontSize: textSize,
-                              fontWeight: FontWeight.w600,
+                              fontWeight: useGoogleImage ? FontWeight.w500 : FontWeight.w600,
                               color: textColor,
+                              fontFamily: useGoogleImage ? 'Roboto' : null,
                             )),
                       ),
                     ),
