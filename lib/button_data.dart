@@ -146,8 +146,8 @@ class SignInButton extends StatelessWidget {
             textSize: textSize,
             onPressed: onPressed);
       case Button.Google:
-      case Button.GoogleBlack:
-      case Button.GoogleBlue:
+      case Button.GoogleDark:
+      case Button.GoogleNeutral:
         return CustomSignInButton(
             key: ValueKey('Google'),
             mini: mini,
@@ -158,19 +158,16 @@ class SignInButton extends StatelessWidget {
             width: width,
             splashColor: splashColor,
             borderRadius: borderRadius,
-            buttonColor: button == Button.GoogleBlue
-                ? Color(0xFF397AF3)
-                : button == Button.GoogleBlack
-                    ? Color(0xFF222222)
-                    : Color(0xFFF6F6F6),
+            buttonColor: button == Button.GoogleNeutral
+                ? Color(0xFFF2F2F2)
+                : button == Button.GoogleDark
+                    ? Color(0xFF131314)
+                    : Color(0xFFFFFFFF),
             textColor:
-                (button == Button.GoogleBlue || button == Button.GoogleBlack)
-                    ? Colors.white
-                    : Colors.black87,
-            imageBackgroundColor:
-                (button == Button.GoogleBlue || button == Button.GoogleBlack)
-                    ? Colors.white
-                    : Colors.transparent,
+                (button == Button.GoogleNeutral || button == Button.Google)
+                    ? Color(0xFF1F1F1F)
+                    : Color(0xFFE3E3E3),
+            imageBackgroundColor: Colors.transparent,
             useGoogleImage: true,
             iconSize: iconSize,
             textSize: textSize,
