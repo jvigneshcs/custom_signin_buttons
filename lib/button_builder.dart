@@ -96,7 +96,7 @@ class CustomSignInButton extends StatelessWidget {
           minWidth: 40,
           padding: EdgeInsets.only(
             left: small ? -2 : iconLeftPadding,
-            top: small ? 4 : iconTopPadding,
+            top: small ? 4 : 0,
             bottom: small ? 4 : 0,
           ),
           splashColor: splashColor,
@@ -114,7 +114,7 @@ class CustomSignInButton extends StatelessWidget {
                   padding: imagePadding,
                   margin: imageMargin,
                   child: Container(
-                    alignment: Alignment.topLeft,
+                    alignment: Alignment.center,
                     child: useGoogleImage
                         ? Image(
                             image: AssetImage('assets/google.png',
