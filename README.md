@@ -121,6 +121,7 @@ CustomSignInButton(
 ```dart
 enum Button {
   Apple,
+  AppleWithOutline,
   AppleDark,
   Discord,
   Email,
@@ -129,7 +130,7 @@ enum Button {
   GitHub,
   Google,
   GoogleNeutral,
-  GoogleBlack,
+  GoogleDark,
   GooglePlay,
   Instagram,
   InstagramGradient,

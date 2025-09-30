@@ -41,6 +41,7 @@ class SignInButton extends StatelessWidget {
     spanish ? texto = 'Iniciar Sesion con' : texto = 'Sign in with';
     switch (button) {
       case Button.Apple:
+      case Button.AppleWithOutline:
       case Button.AppleDark:
         return CustomSignInButton(
             key: ValueKey('Apple'),
@@ -52,13 +53,17 @@ class SignInButton extends StatelessWidget {
             width: width,
             splashColor: splashColor,
             borderRadius: borderRadius,
+            borderWidth: button == Button.AppleWithOutline ? 1.0 : 0.0,
+            borderColor: button == Button.AppleWithOutline
+                ? Colors.black
+                : Colors.transparent,
             buttonColor:
-                button == Button.Apple ? Color(0xFFE9E9E9) : Color(0xFF222222),
+                button == Button.AppleDark ? Colors.black : Colors.white,
             textColor:
-                button == Button.Apple ? Colors.black87 : Color(0xFFF3F2F1),
+                button == Button.AppleDark ? Colors.white : Colors.black,
             customIcon: FontAwesomeIcons.apple,
             iconColor:
-                button == Button.Apple ? Color(0xFF050505) : Color(0xFFF3F2F1),
+                button == Button.AppleDark ? Colors.white : Colors.black,
             iconLeftPadding: mini ? 0 : 5,
             imagePadding: EdgeInsets.symmetric(vertical: 3),
             iconSize: iconSize,
